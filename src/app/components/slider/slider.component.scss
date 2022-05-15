@@ -1,0 +1,92 @@
+@import "../../../styles/colors.scss";
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35rem;
+  background-color: #000;
+  position: relative;
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 35rem;
+
+    &__bg {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0) 45%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+
+      &-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__pane {
+      position: absolute;
+      width: 45%;
+      top: 5rem;
+      left: 5rem;
+
+      .name {
+        font-size: 2.8rem;
+      }
+      .meta {
+        font-size: 1.4rem;
+        color: $lightGray;
+
+        .info {
+          display: flex;
+          align-items: center;
+          > span {
+            &:not(:last-child)::after {
+              content: "|";
+              margin-left: 9px;
+              margin-right: 9px;
+            }
+          }
+
+          .rating {
+            display: flex;
+            align-items: center;
+            .star {
+              color: $goldColor;
+              margin-right: 5px;
+            }
+
+            &__value {
+              color: $white;
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+
+      .desc {
+        margin-top: 4rem;
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
