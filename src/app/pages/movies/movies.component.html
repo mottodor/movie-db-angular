@@ -1,1 +1,6 @@
-<p>movies works!</p>
+<items-banner [items]="movies" [title]="null"></items-banner>
+<p-paginator
+  [rows]="20"
+  [totalRecords]="10000"
+  (onPageChange)="paginate($event)"
+></p-paginator>
