@@ -1,0 +1,37 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+:host ::ng-deep {
+  .p-tabview-nav {
+    justify-content: center;
+
+    li .p-tabview-nav-link {
+      background-color: $bgColor;
+    }
+  }
+}
+
+.poster {
+  max-width: 100%;
+  @include media() {
+    margin: 0 auto;
+  }
+}
+
+.overview {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  display: flex;
+  margin-bottom: 1rem;
+  .label {
+    width: 150px;
+    font-weight: bold;
+  }
+
+  .value {
+    color: $primaryColor;
+  }
+}
