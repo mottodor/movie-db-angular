@@ -52,7 +52,27 @@
         </div>
       </div>
     </p-tabPanel>
-    <p-tabPanel header="Videos"> Content 2 </p-tabPanel>
+    <p-tabPanel header="Reviews">
+      <ng-container *ngFor="let review of reviews">
+        <div class="stat">
+          <div class="label">Author:</div>
+          <div class="value">
+            {{ review.author }}
+          </div>
+        </div>
+        <div class="stat">
+          <div class="label">Created at:</div>
+          <div class="value">
+            {{ review.created_at | date: "medium" }}
+          </div>
+        </div>
+        <div class="stat">
+          <div class="value">
+            {{ review.content }}
+          </div>
+        </div>
+      </ng-container>
+    </p-tabPanel>
     <p-tabPanel header="Photos"> Content 3 </p-tabPanel>
   </p-tabView>
 </ng-container>
