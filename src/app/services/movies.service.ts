@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Movie, MovieDto, ReviewDto } from '../models/movie';
+import { Movie, MovieDto, MovieImages, ReviewDto } from '../models/movie';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -24,11 +24,15 @@ export class MoviesService {
   }
 
   getMovie(id: string) {
-    return this.http
-      .get<Movie>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`)
-      .pipe((res) => {
-        return res;
-      });
+    return this.http.get<Movie>(
+      `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`
+    );
+  }
+
+  getMovieImages(id: string) {
+    return this.http.get<MovieImages>(
+      `${this.baseUrl}/movie/${id}/images?api_key=${this.apiKey}`
+    );
   }
 
   getMovieReviews(id: string) {

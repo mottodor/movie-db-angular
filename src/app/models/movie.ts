@@ -39,6 +39,12 @@ export interface ReviewDto {
   total_pages: number;
 }
 
+export interface MovieImages {
+  backdrops: {
+    file_path: string;
+  }[];
+}
+
 export interface Genre {
   id: number;
   name: string;
