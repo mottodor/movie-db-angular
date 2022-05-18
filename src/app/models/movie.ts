@@ -45,6 +45,13 @@ export interface MovieImages {
   }[];
 }
 
+export interface MovieCredits {
+  cast: {
+    name: string;
+    profile_path: string;
+  }[];
+}
+
 export interface Genre {
   id: number;
   name: string;

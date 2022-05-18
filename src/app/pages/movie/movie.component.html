@@ -51,6 +51,22 @@
           </div>
         </div>
       </div>
+      <p-carousel
+        *ngIf="movieCredits"
+        [value]="movieCredits.cast"
+        [numVisible]="5"
+        [numScroll]="1"
+      >
+        <ng-template let-actor pTemplate="item">
+          <div class="actor">
+            <img
+              [src]="imagesSizes.medium + actor.profile_path"
+              [alt]="actor.name"
+            />
+            <span>{{ actor.name }}</span>
+          </div>
+        </ng-template>
+      </p-carousel>
     </p-tabPanel>
     <p-tabPanel header="Reviews">
       <ng-container *ngFor="let review of reviews">
